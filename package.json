@@ -1,0 +1,20 @@
+{
+  "name": "w5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "cargo build-bpf --manifest-path=./src/memo/Cargo.toml --bpf-out-dir=./dist/program",
+    "deploy": "solana program deploy dist/program/memo.so --keypair src/client/signer.json",
+    "call:hello": "ts-node src/client/index.ts hello",
+    "call:world": "ts-node src/client/index.ts world",
+    "call:clean": "ts-node src/client/index.ts clean"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@solana/web3.js": "^1.78.4",
+    "ts-node": "^10.9.1"
+  }
+}
